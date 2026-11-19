@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --canvas: #111b29;
+  --shell: #101c2b;
+  --card: #1b293a;
+  --elevated: #233449;
+  --ink: #f4f7fb;
+  --muted: #9eadbe;
+  --line: #304155;
+  --teal: #20b6a5;
+  --blue: #4c83eb;
+  --orange: #f28a3d;
+  --purple: #9a5ce6;
+  --green: #2daa72;
+  --red: #e45d62;
+  --on-action: #101c2b;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+  --scrim: rgba(6, 10, 16, 0.62);
+  --teal-soft: rgba(32, 182, 165, 0.14);
+  --blue-soft: rgba(76, 131, 235, 0.16);
+  --orange-soft: rgba(242, 138, 61, 0.14);
+  --green-soft: rgba(45, 170, 114, 0.14);
+  --red-soft: rgba(228, 93, 98, 0.14);
+  --radius-card: 14px;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --canvas: #f3f6fa;
+  --shell: #ffffff;
+  --card: #ffffff;
+  --elevated: #f8fafc;
+  --ink: #172437;
+  --muted: #748196;
+  --line: #dfe6ef;
+  --teal: #129c91;
+  --blue: #285fd1;
+  --orange: #e9782b;
+  --purple: #8750d5;
+  --green: #21865b;
+  --red: #d64550;
+  --on-action: #ffffff;
+  --shadow: 0 1px 2px rgba(23, 36, 55, 0.05);
+  --scrim: rgba(17, 27, 41, 0.4);
+  --teal-soft: rgba(18, 156, 145, 0.12);
+  --blue-soft: rgba(40, 95, 209, 0.1);
+  --orange-soft: rgba(233, 120, 43, 0.12);
+  --green-soft: rgba(33, 134, 91, 0.12);
+  --red-soft: rgba(214, 69, 80, 0.1);
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, monospace;
+  --font-display: var(--font-manrope), "Segoe UI", sans-serif;
+  --color-canvas: var(--canvas);
+  --color-shell: var(--shell);
+  --color-card: var(--card);
+  --color-elevated: var(--elevated);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-teal: var(--teal);
+  --color-blue: var(--blue);
+  --color-orange: var(--orange);
+  --color-purple: var(--purple);
+  --color-green: var(--green);
+  --color-red: var(--red);
+}
+
+* { box-sizing: border-box; }
+
+html, body { min-height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-inter), "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+button, input, select, textarea { font: inherit; color: inherit; }
+a { font: inherit; }
+
+h1, h2, h3, .font-display { font-family: var(--font-manrope), "Segoe UI", sans-serif; }
+
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+::selection { background: var(--blue-soft); }
+
+.field {
+  height: 40px;
+  width: 100%;
+  border-radius: 11px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  padding: 0 12px;
+  color: var(--ink);
+}
+
+textarea.field { height: auto; padding: 10px 12px; }
+
+.field::placeholder { color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
